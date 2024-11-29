@@ -1,4 +1,5 @@
 package Kata;
+
 import java.util.Scanner;
 
 public class StringCalculator {
@@ -17,8 +18,6 @@ public class StringCalculator {
         String result = operation(action, array);// Результат метода operation записаваем в переменную result
 
         printInQuotes(result);
-
-
     }
 
     // Данный метод проверяет длинну строки
@@ -81,16 +80,16 @@ public class StringCalculator {
             int divider = Integer.parseInt(array[1]);
             int length = array[0].length();
             int lenghtNew = length / divider;
-            result = array[0].substring(0,lenghtNew);
+            result = array[0].substring(0, lenghtNew);
             if (divider == 0) {
                 throw new Exception("Нельзя делить на ноль");
             }
 
         } else if (action == '-') {
-            if (array.length==3){
-                System.out.println("\""+array[0]+"-"+array[1]+"\"");
+            if (array.length == 3) {
+                System.out.println("\"" + array[0] + "-" + array[1] + "\"");
                 System.exit(0);
-            }else {
+            } else {
                 int index = array[0].indexOf(array[1]);
                 result = array[0].substring(0, index);
             }
@@ -101,12 +100,13 @@ public class StringCalculator {
     }
 
     static String text = "";
+
     static void printInQuotes(String result) {
         text = result;
-        if (text.length()>40) {
-            System.out.println("\"" + result + "\"" + "...");
-        }
-        else System.out.println("\"" + result + "\"");
+        if (text.length() > 40) {
+            String substring = text.substring(0, 40);
+            System.out.println("\"" + substring + "\"" + "...");
+        } else System.out.println("\"" + result + "\"");
     }
 
 }
