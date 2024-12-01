@@ -71,6 +71,9 @@ public class StringCalculator {
             result = array[0] + array[1];
         } else if (action == '*') {
             int i = Integer.parseInt(array[1]);
+            if (i<1 || i >10){
+                throw new Exception("Числа должны быть от 1 до 10 включительно");
+            }
             result = array[0].repeat(i);
             if (i == 0) {
                 throw new Exception("Нельзя умножить на 0");
@@ -78,6 +81,9 @@ public class StringCalculator {
 
         } else if (action == '/') {
             int divider = Integer.parseInt(array[1]);
+            if (divider<1 || divider >10){
+                throw new Exception("Числа должны быть от 1 до 10 включительно");
+            }
             int length = array[0].length();
             int lenghtNew = length / divider;
             result = array[0].substring(0, lenghtNew);
